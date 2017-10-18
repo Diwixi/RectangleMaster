@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RectangleMaster</string>
+    <string name="image_path_key">IMAGE_PATH_KEY</string>
+
+    <string name="add">Added image</string>
+    <string name="save">Save image</string>
+    <string name="delete_image_from_list">Delete image from list</string>
+    <string name="app_folder">RM</string>
+</resources>
