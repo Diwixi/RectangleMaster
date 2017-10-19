@@ -55,11 +55,8 @@ public class ChooseActivity extends BaseActivity implements IChooseView{
     }
 
     public void getAllShownImagesPath() {
-        File[] listFiles = new File(root + "/" + getString(R.string.app_folder)).listFiles();
-        for(File filePath: listFiles) {
-            Uri uri = Uri.fromFile(filePath);
-            adapter.addImage(uri);
-        }
+        presenter.checkFolder(root, getString(R.string.app_folder));
+        adapter.addImages(presenter.getAllImageUri(root, getString(R.string.app_folder)));
     }
 
     @Override
@@ -99,7 +96,7 @@ public class ChooseActivity extends BaseActivity implements IChooseView{
             switch (requestCode){
                 case 1:
                     Uri source = data.getData();
-                    presenter.copyImage(source, root, this);
+                    presenter.copyImage(source, root, this, getString(R.string.app_folder));
                     break;
             }
         }

@@ -46,6 +46,10 @@ class ChooseItemAdapter extends RecyclerView.Adapter<ChooseItemAdapter.ViewHolde
         images.add(uri);
     }
 
+    void addImages(List<Uri> images) {
+        this.images.addAll(images);
+    }
+
     void setOnClickListener(IOnItemClick click){
         this.click = click;
     }
